@@ -1,0 +1,208 @@
+/* Основа: палитра, градиент, типографика, кнопки, шапка */
+
+:root {
+  /* Палитра со скриншота */
+  --olive: #81815D;
+  --olive-dark: #323522;
+  --black: #111506;
+  --wine: #570F1D;
+  --wine-light: #6F2B34;
+  --wine-dark: #340A0E;
+
+  /* Текст */
+  --text: #F0EDE0;
+  --text-muted: #CFCCBA;
+
+  /* Подложки под текст: всегда тёмные, чтобы светлый текст читался */
+  --panel: rgba(17, 21, 6, 0.72);
+  --panel-line: rgba(129, 129, 93, 0.28);
+
+  --radius: 20px;
+  --gutter: 20px;
+  --max: 1080px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--wine-dark);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  /* Олива сверху, почти чёрный в середине, бордо внизу.
+     Олива занимает только верхний край под шапкой, там текст на тёмной подложке. */
+  background-color: var(--black);
+  background-image: linear-gradient(
+    180deg,
+    var(--olive) 0,
+    var(--olive-dark) 260px,
+    var(--black) 560px,
+    var(--black) 50%,
+    var(--wine-light) 76%,
+    var(--wine) 89%,
+    var(--wine-dark) 100%
+  );
+  background-repeat: no-repeat;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+section {
+  padding: 72px 0;
+  scroll-margin-top: 90px;
+}
+
+.section-title {
+  font-size: clamp(30px, 5vw, 44px);
+}
+
+/* Кнопки: акцентный цвет только здесь */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--olive);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 2px solid var(--olive);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-small {
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--panel-line);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  border-color: var(--text-muted);
+  filter: none;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* Шапка */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(17, 21, 6, 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--panel-line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 17px;
+  }
+
+  section {
+    padding: 52px 0;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  /* На телефоне ссылки уходят второй строкой и листаются вбок */
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 2px;
+  }
+}
