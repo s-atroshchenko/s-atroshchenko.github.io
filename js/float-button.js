@@ -1,8 +1,8 @@
-// Плавающая кнопка связи (только на телефоне, показ и скрытие задаёт CSS).
-// Кнопка скрыта, пока на экране виден любой элемент с атрибутом data-hide-float:
+// Строка ввода внизу экрана (только на телефоне, внешний вид задаёт CSS).
+// Строка скрыта, пока на экране виден любой элемент с атрибутом data-hide-float:
 // первый экран и блок с кнопками связи. Без библиотек.
 (function () {
-  var btn = document.querySelector('.float-btn');
+  var btn = document.querySelector('.composer');
   if (!btn) return;
 
   var zones = document.querySelectorAll('[data-hide-float]');

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ШАБЛОН СТРАНИЦЫ УСЛУГИ. Новая услуга: скопируй файл, поменяй title, description, og-теги и тексты блоков.
-     Шапка, подвал и плавающая кнопка остаются теми же. -->
+     Шапка, подвал и строка ввода остаются теми же. -->
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -11,16 +11,16 @@
   <meta property="og:description" content="Заявки с сайта, из Telegram и почты в одной CRM или таблице, менеджер сразу получает уведомление. От 10&nbsp;000&nbsp;₽. Напишите в Telegram или на почту.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta name="theme-color" content="#111506">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/pages.css">
-  <script src="../js/float-button.js" defer></script>
+  <link rel="stylesheet" href="../css/base.css?v=7">
+  <link rel="stylesheet" href="../css/pages.css?v=7">
+  <script src="../js/float-button.js?v=7" defer></script>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="wrap header-inner">
       <a class="brand" href="../index.html">Сергей</a>
       <nav class="nav" aria-label="Разделы сайта">
         <a href="../index.html#uslugi">Услуги</a>
@@ -28,129 +28,121 @@
         <a href="../index.html#voprosy">Вопросы</a>
         <a href="../index.html#kontakty">Контакты</a>
       </nav>
-      <a class="btn btn-small js-contact" data-place="service-header" href="https://t.me/zenispy">Telegram</a>
+      <a class="btn btn--small btn--green js-contact" data-place="service-header" href="https://t.me/zenispy">Telegram</a>
     </div>
   </header>
 
-  <main>
+  <main class="wrap chat">
 
-    <section class="service-hero" data-hide-float>
-      <div class="container">
-        <a class="back-link" href="../index.html#uslugi">← Все услуги</a>
-        <h1>Все заявки в одном месте</h1>
-        <p class="service-lead">Сайт, Telegram и почта сходятся в одну CRM или таблицу, менеджер сразу получает уведомление.</p>
-        <p class="service-price">от&nbsp;10&nbsp;000&nbsp;₽</p>
-        <div class="hero-actions">
-          <a class="btn js-contact" data-place="service-hero" href="https://t.me/zenispy">Обсудить задачу в Telegram</a>
-          <a class="btn btn-ghost js-contact" data-place="service-hero-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
+    <a class="back-link" href="../index.html#uslugi">← Все услуги</a>
+
+    <!-- 1. Первый экран -->
+    <p class="q">Заявки идут из разных мест. Можно собрать их в одном?</p>
+    <section class="a a--accent" data-hide-float>
+      <h1>Все заявки в одном месте</h1>
+      <p class="lead">Сайт, Telegram и почта сходятся в одну CRM или таблицу, менеджер сразу получает уведомление.</p>
+      <p class="facts"><strong>от&nbsp;10&nbsp;000&nbsp;₽</strong></p>
+      <div class="actions">
+        <a class="btn btn--yellow js-contact" data-place="service-hero" href="https://t.me/zenispy">Обсудить задачу в Telegram</a>
+        <a class="btn btn--line-white js-contact" data-place="service-hero-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
+      </div>
+      <p class="address">zenispy@gmail.com</p>
+    </section>
+
+    <!-- 2. Подходит ли -->
+    <h2 class="q">Мне это подойдёт?</h2>
+    <section class="a a--calm">
+      <p class="list-lead">Подходит, если</p>
+      <ul class="list">
+        <li>Заявки приходят с сайта, из мессенджеров и почты, и каждый канал проверяют отдельно.</li>
+        <li>Бывает, что заявка пришла вечером или в выходной, и на неё никто не ответил.</li>
+        <li>Никто не может точно сказать, сколько заявок было за месяц.</li>
+      </ul>
+    </section>
+
+    <!-- 3. Как это работает -->
+    <h2 class="q">Как это работает?</h2>
+    <section class="a a--calm a--before-notice">
+      <ol class="steps">
+        <li><strong>Клиент оставил заявку на сайте, в боте или письмом.</strong></li>
+        <li><strong>Заявка появилась в вашей CRM или таблице.</strong></li>
+        <li><strong>Менеджеру сразу пришло уведомление.</strong></li>
+      </ol>
+    </section>
+    <div class="a a--dark">
+      <div class="notice-head"><strong>Новая заявка</strong><time>14:32</time></div>
+      <p><span>Откуда:</span> форма на сайте</p>
+      <p><span>Имя:</span> Анна</p>
+      <p><span>Что нужно:</span> узнать стоимость доставки</p>
+    </div>
+    <p class="a-note">Пример уведомления. Данные вымышленные.</p>
+
+    <!-- 4. Что входит в цену -->
+    <h2 class="q">Что входит в цену?</h2>
+    <section class="a a--calm">
+      <div class="terms">
+        <div>
+          <h3>Входит</h3>
+          <ul class="list">
+            <li>До 2 источников заявок (например, форма сайта и почта).</li>
+            <li>Подключение к вашей CRM или таблице.</li>
+            <li>Уведомление менеджеру о новой заявке.</li>
+            <li>Короткая инструкция.</li>
+            <li>2 круга правок.</li>
+          </ul>
         </div>
-        <p class="contacts-address hero-address">zenispy@gmail.com</p>
-      </div>
-    </section>
-
-    <section class="service-block">
-      <div class="container">
-        <h2>Подходит, если</h2>
-        <ul class="check-list">
-          <li>Заявки приходят с сайта, из мессенджеров и почты, и каждый канал проверяют отдельно.</li>
-          <li>Бывает, что заявка пришла вечером или в выходной, и на неё никто не ответил.</li>
-          <li>Никто не может точно сказать, сколько заявок было за месяц.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="service-block">
-      <div class="container">
-        <h2>Как это работает</h2>
-        <div class="flow">
-          <ol class="flow-steps">
-            <li>Клиент оставил заявку на сайте, в боте или письмом.</li>
-            <li>Заявка появилась в вашей CRM или таблице.</li>
-            <li>Менеджеру сразу пришло уведомление.</li>
-          </ol>
-          <figure class="notice-wrap">
-            <div class="notice">
-              <span class="notice-tag">Пример уведомления</span>
-              <strong class="notice-title">Новая заявка</strong>
-              <p><span>Откуда:</span> форма на сайте</p>
-              <p><span>Имя:</span> Анна</p>
-              <p><span>Что нужно:</span> узнать стоимость доставки</p>
-              <p><span>Время:</span> 14:32</p>
-            </div>
-            <figcaption>Данные в примере вымышленные</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-block">
-      <div class="container">
-        <h2>Что входит</h2>
-        <ul class="check-list">
-          <li>До 2 источников заявок (например, форма сайта и почта).</li>
-          <li>Подключение к вашей CRM или таблице.</li>
-          <li>Уведомление менеджеру о новой заявке.</li>
-          <li>Короткая инструкция.</li>
-          <li>2 круга правок.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="service-block">
-      <div class="container">
-        <h2>Что не входит</h2>
-        <ul class="check-list check-list-no">
-          <li>Покупка и оплата CRM.</li>
-          <li>Настройка рекламы.</li>
-          <li>Больше 2 источников (обсуждаем отдельно).</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="service-block">
-      <div class="container">
-        <h2>Что понадобится от вас</h2>
-        <ul class="check-list">
-          <li>Доступ к сайту или форме, откуда приходят заявки.</li>
-          <li>Доступ к вашей CRM или таблице.</li>
-          <li>Имя сотрудника, которому приходят уведомления.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="service-block">
-      <div class="container">
-        <h2>Как проходит работа</h2>
-        <ol class="work-list">
-          <li><strong>Знакомство</strong></li>
-          <li><strong>Согласование</strong></li>
-          <li><strong>Задумка</strong></li>
-          <li><strong>Создание</strong></li>
-          <li><strong>Правки и передача</strong></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="service-block" data-hide-float>
-      <div class="container">
-        <div class="cta">
-          <h2>Расскажите, откуда сейчас приходят заявки</h2>
-          <div class="contacts-actions">
-            <a class="btn js-contact" data-place="service-cta" href="https://t.me/zenispy">Написать в Telegram</a>
-            <a class="btn js-contact" data-place="service-cta-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
-          </div>
-          <p class="contacts-address">zenispy@gmail.com</p>
+        <div>
+          <h3>Не входит</h3>
+          <ul class="list list--no">
+            <li>Покупка и оплата CRM.</li>
+            <li>Настройка рекламы.</li>
+            <li>Больше 2 источников (обсуждаем отдельно).</li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <!-- 5. Что понадобится -->
+    <h2 class="q">Что понадобится от меня?</h2>
+    <section class="a a--calm">
+      <ul class="list">
+        <li>Доступ к сайту или форме, откуда приходят заявки.</li>
+        <li>Доступ к вашей CRM или таблице.</li>
+        <li>Имя сотрудника, которому приходят уведомления.</li>
+      </ul>
+    </section>
+
+    <!-- 6. Как проходит работа -->
+    <h2 class="q">Как проходит работа?</h2>
+    <section class="a a--calm">
+      <ol class="steps">
+        <li><strong>Знакомство</strong></li>
+        <li><strong>Согласование</strong></li>
+        <li><strong>Задумка</strong></li>
+        <li><strong>Создание</strong></li>
+        <li><strong>Правки и передача</strong></li>
+      </ol>
+    </section>
+
+    <!-- 7. Контакты -->
+    <section class="a a--accent a--last" data-hide-float>
+      <h2>Расскажите, откуда сейчас приходят заявки</h2>
+      <div class="actions">
+        <a class="btn btn--yellow js-contact" data-place="service-cta" href="https://t.me/zenispy">Написать в Telegram</a>
+        <a class="btn btn--line-white js-contact" data-place="service-cta-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
+      </div>
+      <p class="address">zenispy@gmail.com</p>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <div class="container">Сергей · самозанятый · <a class="js-contact" data-place="service-footer" href="https://t.me/zenispy">Telegram</a> · <a class="js-contact" data-place="service-footer-mail" href="mailto:zenispy@gmail.com">Почта</a> · 2026</div>
+    <div class="wrap">Сергей · самозанятый · <a class="js-contact" data-place="service-footer" href="https://t.me/zenispy">Telegram</a> · <a class="js-contact" data-place="service-footer-mail" href="mailto:zenispy@gmail.com">Почта</a> · 2026</div>
   </footer>
 
-  <a class="btn float-btn js-contact" data-place="service-float" href="https://t.me/zenispy">Написать в Telegram</a>
+  <div class="composer">
+    <a class="js-contact" data-place="service-float" href="https://t.me/zenispy"><span>Написать о своей задаче</span><span>Telegram</span></a>
+  </div>
 
 </body>
 </html>

@@ -9,16 +9,16 @@
   <meta property="og:description" content="Сайт, бот и CRM, в которых менеджер не теряет заявки. От 10&nbsp;000&nbsp;₽, цена фиксируется до старта, доступы оформлены на вас. Пишите в Telegram или на почту.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta name="theme-color" content="#111506">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <script src="js/float-button.js" defer></script>
+  <link rel="stylesheet" href="css/base.css?v=7">
+  <link rel="stylesheet" href="css/pages.css?v=7">
+  <script src="js/float-button.js?v=7" defer></script>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="wrap header-inner">
       <a class="brand" href="index.html">Сергей</a>
       <nav class="nav" aria-label="Разделы сайта">
         <a href="#uslugi">Услуги</a>
@@ -26,203 +26,163 @@
         <a href="#voprosy">Вопросы</a>
         <a href="#kontakty">Контакты</a>
       </nav>
-      <a class="btn btn-small js-contact" data-place="header" href="https://t.me/zenispy">Telegram</a>
+      <a class="btn btn--small btn--green js-contact" data-place="header" href="https://t.me/zenispy">Telegram</a>
     </div>
   </header>
 
-  <main>
+  <main class="wrap chat">
 
-    <section class="hero" data-hide-float>
-      <div class="container">
-        <p class="eyebrow">Для бизнеса, где заявки приходят с сайта, из мессенджеров и почты</p>
-        <h1>Сайт, бот и CRM, в которых менеджер не теряет заявки</h1>
-        <p class="hero-sub">Клиенту удобно оставить заявку. Менеджер сразу её видит и не забывает ответить.</p>
-        <p class="hero-facts"><span class="fact-group">от&nbsp;10&nbsp;000&nbsp;₽ · цена фиксируется до старта</span><span class="fact-sep"> · </span><span class="fact-last">доступы и аккаунты оформлены на вас</span></p>
-        <div class="hero-actions">
-          <a class="btn js-contact" data-place="hero" href="https://t.me/zenispy">Обсудить задачу в Telegram</a>
-          <a class="btn btn-ghost js-contact" data-place="hero-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
-        </div>
-        <p class="contacts-address hero-address">zenispy@gmail.com</p>
+    <!-- 1. Первый экран -->
+    <p class="q intro-q">Заявки приходят с сайта, из мессенджеров и почты, и часть теряется. Что с этим можно сделать?</p>
+    <section class="a a--accent intro-a" data-hide-float>
+      <h1>Сайт, бот и CRM, в которых менеджер не теряет заявки</h1>
+      <p class="lead">Клиенту удобно оставить заявку. Менеджер сразу её видит и не забывает ответить.</p>
+      <p class="facts"><strong>от&nbsp;10&nbsp;000&nbsp;₽</strong> Цена фиксируется до старта. Доступы и аккаунты оформлены на вас.</p>
+      <div class="actions">
+        <a class="btn btn--yellow js-contact" data-place="hero" href="https://t.me/zenispy">Обсудить задачу в Telegram</a>
+        <a class="btn btn--line-white js-contact" data-place="hero-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
+      </div>
+      <p class="address">zenispy@gmail.com</p>
+    </section>
+
+    <!-- 2. Услуги и цены.
+         Новая услуга: скопируй любую .price-row, поменяй название, цену и тексты. -->
+    <h2 class="q">Сколько это стоит?</h2>
+    <section class="a a--calm" id="uslugi">
+      <div class="price-row">
+        <h3>Заявки в одно место</h3>
+        <span class="price">от&nbsp;10&nbsp;000&nbsp;₽</span>
+        <p class="if">Если заявки приходят с сайта, из мессенджеров и почты, и часть остаётся без ответа.</p>
+        <p>Все заявки в одной CRM или таблице. Менеджер сразу получает уведомление о новой. <a href="services/zayavki-i-prodazhi.html">Подробнее</a></p>
+      </div>
+      <div class="price-row">
+        <h3>Сайт</h3>
+        <span class="price">от&nbsp;15&nbsp;000&nbsp;₽</span>
+        <p class="if">Если сайта нет или с него не пишут.</p>
+        <p>Сайт, где за 5 секунд понятно, что вы предлагаете, и удобно оставить заявку. На вашем домене.</p>
+      </div>
+      <div class="price-row">
+        <h3>Бот в Telegram или MAX</h3>
+        <span class="price">от&nbsp;12&nbsp;000&nbsp;₽</span>
+        <p class="if">Если клиенты пишут в мессенджеры, а ответить сразу не получается.</p>
+        <p>Бот задаёт клиенту нужные вопросы и передаёт менеджеру готовую заявку.</p>
+      </div>
+      <div class="price-row">
+        <h3>ИИ-ассистент</h3>
+        <span class="price">от&nbsp;20&nbsp;000&nbsp;₽<small>плюс оплата сервисов</small></span>
+        <p class="if">Если менеджеры каждый день отвечают на одни и те же вопросы.</p>
+        <p>Ассистент отвечает клиентам по вашим материалам, не выдумывает, сложное передаёт человеку.</p>
+      </div>
+      <div class="price-row price-row--other">
+        <h3>Другая задача</h3>
+        <p>Если вашей задачи нет в списке, напишите. Разберёмся, можно ли её решить и сколько это будет стоить.</p>
+        <a class="btn btn--small btn--line-ink js-contact" data-place="card-other" href="https://t.me/zenispy">Обсудить в Telegram</a>
+      </div>
+      <p class="price-foot">Цена фиксируется до старта. Точная цена и срок известны после знакомства, до начала работы.</p>
+    </section>
+
+    <!-- 3. Что видит менеджер -->
+    <h2 class="q">А как это будет выглядеть у менеджера?</h2>
+    <section class="a a--calm a--before-notice" id="kak-eto-vyglyadit">
+      <ol class="steps">
+        <li><strong>Клиент оставил заявку на сайте, в боте или письмом.</strong></li>
+        <li><strong>Заявка появилась в вашей CRM или таблице.</strong></li>
+        <li><strong>Менеджеру сразу пришло уведомление.</strong></li>
+      </ol>
+    </section>
+    <div class="a a--dark">
+      <div class="notice-head"><strong>Новая заявка</strong><time>14:32</time></div>
+      <p><span>Откуда:</span> форма на сайте</p>
+      <p><span>Имя:</span> Анна</p>
+      <p><span>Что нужно:</span> узнать стоимость доставки</p>
+    </div>
+    <p class="a-note">Пример уведомления. Данные вымышленные.</p>
+
+    <!-- 4. Как идёт работа -->
+    <h2 class="q">Как идёт работа?</h2>
+    <section class="a a--calm" id="kak-idet-rabota">
+      <ol class="steps">
+        <li><strong>Знакомство</strong><span>Рассказываете, как сейчас приходят заявки и что с ними происходит дальше.</span></li>
+        <li><strong>Согласование</strong><span>Фиксируем задачу, срок и цену до начала работы.</span></li>
+        <li><strong>Задумка</strong><span>Получаете описание простыми словами: как всё будет работать.</span></li>
+        <li><strong>Создание</strong><span>По ходу работы видите промежуточный результат.</span></li>
+        <li><strong>Правки и передача</strong><span>В конце у вас доступы и короткая инструкция.</span></li>
+      </ol>
+    </section>
+
+    <!-- 5. Условия -->
+    <h2 class="q">А на каких условиях?</h2>
+    <section class="a a--calm" id="usloviya">
+      <div class="terms">
+        <div><h3>Цена известна до старта</h3><p>Задачу и стоимость фиксируем до начала работы.</p></div>
+        <div><h3>Оплата двумя частями</h3><p>Половина до начала работы, половина после запуска. Исполнитель самозанятый, на каждую оплату приходит чек.</p></div>
+        <div><h3>Правки включены</h3><p>Два круга правок входят в цену.</p></div>
+        <div><h3>Всё оформлено на вас</h3><p>Аккаунты, доступы и код остаются у вас.</p></div>
       </div>
     </section>
 
-    <section id="uslugi">
-      <div class="container">
-        <h2 class="section-title">Услуги и цены</h2>
+    <!-- 6. Ещё вопросы.
+         Новый вопрос: скопируй <details>, поменяй вопрос и ответ. -->
+    <h2 class="chat-title" id="voprosy">Ещё вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Кто будет делать работу?</summary>
+        <div class="a a--calm">Я, Сергей. Работаю как самозанятый. До этого 5 лет работал в продажах, в том числе B2B, поэтому знаю, как заявки теряются на практике.</div>
+      </details>
+      <details>
+        <summary>Работаете с моей CRM?</summary>
+        <div class="a a--calm">Скорее всего, да. Работал в Битрикс24, amoCRM, YCLIENTS, Мегаплан, EnvyCRM и 1С:CRM. Если CRM нет, подскажу, нужна ли она вам.</div>
+      </details>
+      <details>
+        <summary>Кто платит за сервисы?</summary>
+        <div class="a a--calm">Хостинг, домен, CRM и нейросеть оформляются на вас, и оплачиваете их вы напрямую. Сколько это в месяц, скажу заранее.</div>
+      </details>
+      <details>
+        <summary>Сколько времени это займёт?</summary>
+        <div class="a a--calm">Зависит от объёма задачи. Срок называю после знакомства, до начала работы.</div>
+      </details>
+      <details>
+        <summary>Можно начать с небольшой задачи?</summary>
+        <div class="a a--calm">Да. Например, с одной формы на сайте, заявки из которой сразу приходят менеджеру.</div>
+      </details>
+      <details>
+        <summary>Что если ИИ-ассистент ответит неправильно?</summary>
+        <div class="a a--calm">Он отвечает только по вашим материалам. Если ответа в них нет, передаёт вопрос человеку.</div>
+      </details>
+      <details>
+        <summary>Что будет после сдачи?</summary>
+        <div class="a a--calm">У вас останутся доступы и короткая инструкция. Сопровождение по желанию.</div>
+      </details>
+      <details>
+        <summary>Почему сейчас цены ниже обычных?</summary>
+        <div class="a a--calm">Я недавно открылся и собираю портфолио, поэтому сейчас предлагаю пониженные цены. Объём работы и правки те же, что в договорённости.</div>
+      </details>
+      <details>
+        <summary>Telegram не открывается. Как написать?</summary>
+        <div class="a a--calm">Напишите на почту <a class="js-contact" data-place="faq-mail" href="mailto:zenispy@gmail.com">zenispy@gmail.com</a>, отвечу оттуда.</div>
+      </details>
+    </div>
 
-        <!-- Новая услуга: скопируй любую карточку, поменяй тексты, цену и ссылку. -->
-        <div class="cards">
-          <article class="card">
-            <h3>Заявки в одно место</h3>
-            <p><span class="card-label">Подходит, если</span>Заявки приходят с сайта, из мессенджеров и почты, и часть остаётся без ответа</p>
-            <p><span class="card-label">Что получите</span>Все заявки в одной CRM или таблице. Менеджер сразу получает уведомление о новой</p>
-            <p class="card-price">от&nbsp;10&nbsp;000&nbsp;₽</p>
-            <a class="card-link" href="services/zayavki-i-prodazhi.html">Подробнее →</a>
-          </article>
-
-          <article class="card">
-            <h3>Сайт</h3>
-            <p><span class="card-label">Подходит, если</span>Сайта нет или с него не пишут</p>
-            <p><span class="card-label">Что получите</span>Сайт, где за 5 секунд понятно, что вы предлагаете, и удобно оставить заявку. На вашем домене</p>
-            <p class="card-price">от&nbsp;15&nbsp;000&nbsp;₽</p>
-            <a class="card-link js-contact" data-place="card-site" href="https://t.me/zenispy">Обсудить в Telegram →</a>
-          </article>
-
-          <article class="card">
-            <h3>Бот в Telegram или MAX</h3>
-            <p><span class="card-label">Подходит, если</span>Клиенты пишут в мессенджеры, а ответить сразу не получается</p>
-            <p><span class="card-label">Что получите</span>Бот задаёт клиенту нужные вопросы и передаёт менеджеру готовую заявку</p>
-            <p class="card-price">от&nbsp;12&nbsp;000&nbsp;₽</p>
-            <a class="card-link js-contact" data-place="card-bot" href="https://t.me/zenispy">Обсудить в Telegram →</a>
-          </article>
-
-          <article class="card">
-            <h3>ИИ-ассистент</h3>
-            <p><span class="card-label">Подходит, если</span>Менеджеры каждый день отвечают на одни и те же вопросы</p>
-            <p><span class="card-label">Что получите</span>Ассистент отвечает клиентам по вашим материалам, не выдумывает, сложное передаёт человеку</p>
-            <p class="card-price">от&nbsp;20&nbsp;000&nbsp;₽ + оплата сервисов</p>
-            <a class="card-link js-contact" data-place="card-ai" href="https://t.me/zenispy">Обсудить в Telegram →</a>
-          </article>
-
-          <article class="card card-wide">
-            <div class="card-wide-text">
-              <h3>Другая задача</h3>
-              <p>Если вашей задачи нет в списке, напишите. Разберёмся, можно ли её решить и сколько это будет стоить.</p>
-            </div>
-            <a class="btn btn-ghost js-contact" data-place="card-other" href="https://t.me/zenispy">Обсудить в Telegram</a>
-          </article>
-        </div>
-
-        <p class="cards-note">Точная цена и срок известны после знакомства, до начала работы.</p>
+    <!-- 7. Контакты -->
+    <section class="a a--accent a--last" id="kontakty" data-hide-float>
+      <h2>Расскажите о задаче</h2>
+      <p class="lead">Напишите в двух словах, что у вас сейчас происходит с заявками или сайтом.</p>
+      <div class="actions">
+        <a class="btn btn--yellow js-contact" data-place="contacts" href="https://t.me/zenispy">Написать в Telegram</a>
+        <a class="btn btn--line-white js-contact" data-place="contacts-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
       </div>
-    </section>
-
-    <section id="kak-eto-vyglyadit">
-      <div class="container">
-        <h2 class="section-title">Что видит менеджер</h2>
-        <div class="flow">
-          <ol class="flow-steps">
-            <li>Клиент оставил заявку на сайте, в боте или письмом.</li>
-            <li>Заявка появилась в вашей CRM или таблице.</li>
-            <li>Менеджеру сразу пришло уведомление.</li>
-          </ol>
-          <figure class="notice-wrap">
-            <div class="notice">
-              <span class="notice-tag">Пример уведомления</span>
-              <strong class="notice-title">Новая заявка</strong>
-              <p><span>Откуда:</span> форма на сайте</p>
-              <p><span>Имя:</span> Анна</p>
-              <p><span>Что нужно:</span> узнать стоимость доставки</p>
-              <p><span>Время:</span> 14:32</p>
-            </div>
-            <figcaption>Данные в примере вымышленные</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="kak-idet-rabota">
-      <div class="container">
-        <h2 class="section-title">Как идёт работа</h2>
-        <ol class="work-list">
-          <li><strong>Знакомство.</strong> <span>Рассказываете, как сейчас приходят заявки и что с ними происходит дальше.</span></li>
-          <li><strong>Согласование.</strong> <span>Фиксируем задачу, срок и цену до начала работы.</span></li>
-          <li><strong>Задумка.</strong> <span>Получаете описание простыми словами: как всё будет работать.</span></li>
-          <li><strong>Создание.</strong> <span>По ходу работы видите промежуточный результат.</span></li>
-          <li><strong>Правки и передача.</strong> <span>В конце у вас доступы и короткая инструкция.</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="usloviya">
-      <div class="container">
-        <h2 class="section-title">Условия работы</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Цена известна до старта</h3>
-            <p>Задачу и стоимость фиксируем до начала работы.</p>
-          </article>
-          <article class="card">
-            <h3>Оплата двумя частями</h3>
-            <p>Половина до начала работы, половина после запуска. Исполнитель самозанятый, на каждую оплату приходит чек.</p>
-          </article>
-          <article class="card">
-            <h3>Правки включены</h3>
-            <p>Два круга правок входят в цену.</p>
-          </article>
-          <article class="card">
-            <h3>Всё оформлено на вас</h3>
-            <p>Аккаунты, доступы и код остаются у вас.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="voprosy">
-      <div class="container">
-        <h2 class="section-title">Частые вопросы</h2>
-        <div class="faq">
-          <details>
-            <summary>Кто будет делать работу?</summary>
-            <p>Я, Сергей. Работаю как самозанятый. До этого 5 лет работал в продажах, в том числе B2B, поэтому знаю, как заявки теряются на практике.</p>
-          </details>
-          <details>
-            <summary>Работаете с моей CRM?</summary>
-            <p>Скорее всего, да. Работал в Битрикс24, amoCRM, YCLIENTS, Мегаплан, EnvyCRM и 1С:CRM. Если CRM нет, подскажу, нужна ли она вам.</p>
-          </details>
-          <details>
-            <summary>Кто платит за сервисы?</summary>
-            <p>Хостинг, домен, CRM и нейросеть оформляются на вас, и оплачиваете их вы напрямую. Сколько это в месяц, скажу заранее.</p>
-          </details>
-          <details>
-            <summary>Сколько времени это займёт?</summary>
-            <p>Зависит от объёма задачи. Срок называю после знакомства, до начала работы.</p>
-          </details>
-          <details>
-            <summary>Можно начать с небольшой задачи?</summary>
-            <p>Да. Например, с одной формы на сайте, заявки из которой сразу приходят менеджеру.</p>
-          </details>
-          <details>
-            <summary>Что если ИИ-ассистент ответит неправильно?</summary>
-            <p>Он отвечает только по вашим материалам. Если ответа в них нет, передаёт вопрос человеку.</p>
-          </details>
-          <details>
-            <summary>Что будет после сдачи?</summary>
-            <p>У вас останутся доступы и короткая инструкция. Сопровождение по желанию.</p>
-          </details>
-          <details>
-            <summary>Почему сейчас цены ниже обычных?</summary>
-            <p>Я недавно открылся и собираю портфолио, поэтому сейчас предлагаю пониженные цены. Объём работы и правки те же, что в договорённости.</p>
-          </details>
-          <details>
-            <summary>Telegram не открывается. Как написать?</summary>
-            <p>Напишите на почту <a class="js-contact" data-place="faq-mail" href="mailto:zenispy@gmail.com">zenispy@gmail.com</a>, отвечу оттуда.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakty" class="contacts" data-hide-float>
-      <div class="container">
-        <h2 class="section-title">Расскажите о задаче</h2>
-        <div class="contacts-box">
-          <p>Напишите в двух словах, что у вас сейчас происходит с заявками или сайтом.</p>
-          <div class="contacts-actions">
-            <a class="btn js-contact" data-place="contacts" href="https://t.me/zenispy">Написать в Telegram</a>
-            <a class="btn js-contact" data-place="contacts-mail" href="mailto:zenispy@gmail.com">Написать на почту</a>
-          </div>
-          <p class="contacts-address">zenispy@gmail.com</p>
-        </div>
-      </div>
+      <p class="address">zenispy@gmail.com</p>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <div class="container">Сергей · самозанятый · <a class="js-contact" data-place="footer" href="https://t.me/zenispy">Telegram</a> · <a class="js-contact" data-place="footer-mail" href="mailto:zenispy@gmail.com">Почта</a> · 2026</div>
+    <div class="wrap">Сергей · самозанятый · <a class="js-contact" data-place="footer" href="https://t.me/zenispy">Telegram</a> · <a class="js-contact" data-place="footer-mail" href="mailto:zenispy@gmail.com">Почта</a> · 2026</div>
   </footer>
 
-  <a class="btn float-btn js-contact" data-place="float" href="https://t.me/zenispy">Написать в Telegram</a>
+  <div class="composer">
+    <a class="js-contact" data-place="float" href="https://t.me/zenispy"><span>Написать о своей задаче</span><span>Telegram</span></a>
+  </div>
 
 </body>
 </html>
